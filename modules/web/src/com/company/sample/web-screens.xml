@@ -9,4 +9,8 @@
             template="com/company/sample/web/service/service-browse.xml"/>
     <screen id="sample$Service.edit"
             template="com/company/sample/web/service/service-edit.xml"/>
+    <screen id="sample$Detailing.browse"
+            template="com/company/sample/web/detailing/detailing-browse.xml"/>
+    <screen id="sample$Detailing.edit"
+            template="com/company/sample/web/detailing/detailing-edit.xml"/>
 </screen-config>

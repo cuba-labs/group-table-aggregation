@@ -8,7 +8,7 @@
     <dsContext>
         <datasource id="serviceDs"
                     class="com.company.sample.entity.Service"
-                    view="service-with-type"/>
+                    view="service-edit"/>
         <collectionDatasource id="allServiceTypesDs"
                               class="com.company.sample.entity.ServiceType"
                               view="_minimal">
@@ -24,9 +24,19 @@
         <fieldGroup id="fieldGroup"
                     datasource="serviceDs">
             <column width="250px">
-                <field property="type"
-                       optionsDatasource="allServiceTypesDs"/>
+                <field property="type">
+                    <lookupPickerField id="typeField"
+                                       datasource="serviceDs"
+                                       optionsDatasource="allServiceTypesDs"
+                                       property="type">
+                        <actions>
+                            <action id="lookup"/>
+                            <action id="clear"/>
+                        </actions>
+                    </lookupPickerField>
+                </field>
                 <field property="amount"/>
+                <field property="detailing"/>
                 <field property="date"/>
             </column>
         </fieldGroup>

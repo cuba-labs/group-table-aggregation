@@ -27,10 +27,23 @@ public class Service extends StandardEntity {
     @Column(name = "AMOUNT", nullable = false)
     protected BigDecimal amount;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DETAILING_ID")
+    protected Detailing detailing;
+
     @Temporal(TemporalType.DATE)
     @NotNull
     @Column(name = "DATE_", nullable = false)
     protected Date date;
+
+    public void setDetailing(Detailing detailing) {
+        this.detailing = detailing;
+    }
+
+    public Detailing getDetailing() {
+        return detailing;
+    }
+
 
     public void setType(ServiceType type) {
         this.type = type;

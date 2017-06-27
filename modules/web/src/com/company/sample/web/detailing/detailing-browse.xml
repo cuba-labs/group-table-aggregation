@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.sample.web.detailing.DetailingBrowse"
+        focusComponent="detailingsTable"
+        lookupComponent="detailingsTable"
+        messagesPack="com.company.sample.web.detailing">
+    <dsContext>
+        <collectionDatasource id="detailingsDs"
+                              class="com.company.sample.entity.Detailing"
+                              view="_local">
+            <query>
+                <![CDATA[select e from sample$Detailing e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="detailingsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="detailingsTable"
+                datasource="detailingsDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="detailingsTable"
+               width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="description"/>
+            </columns>
+            <rows datasource="detailingsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="detailingsTable.create"/>
+                <button id="editBtn"
+                        action="detailingsTable.edit"/>
+                <button id="removeBtn"
+                        action="detailingsTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

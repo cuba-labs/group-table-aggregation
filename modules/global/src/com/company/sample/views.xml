@@ -2,8 +2,10 @@
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
     <view class="com.company.sample.entity.Service"
           extends="_local"
-          name="service-with-type">
+          name="service-edit">
         <property name="type"
+                  view="_minimal"/>
+        <property name="detailing"
                   view="_minimal"/>
     </view>
 </views>

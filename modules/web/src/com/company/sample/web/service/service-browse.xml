@@ -8,7 +8,7 @@
     <dsContext>
         <groupDatasource id="servicesDs"
                          class="com.company.sample.entity.Service"
-                         view="service-with-type">
+                         view="service-edit">
             <query>
                 <![CDATA[select e from sample$Service e]]>
             </query>
@@ -38,6 +38,9 @@
                 <column id="amount">
                     <aggregation type="SUM"/>
                 </column>
+                <column id="detailing"
+                        link="true"
+                        linkScreenOpenType="DIALOG"/>
                 <column id="date"/>
             </columns>
             <rows datasource="servicesDs"/>
