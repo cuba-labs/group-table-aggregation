@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.sample.entity.Service"
+          extends="_local"
+          name="service-with-type">
+        <property name="type"
+                  view="_minimal"/>
+    </view>
+</views>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.sample.web.service.ServiceEdit"
+        datasource="serviceDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.sample.web.service">
+    <dsContext>
+        <datasource id="serviceDs"
+                    class="com.company.sample.entity.Service"
+                    view="service-with-type"/>
+        <collectionDatasource id="allServiceTypesDs"
+                              class="com.company.sample.entity.ServiceType"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from sample$ServiceType e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="AUTO"
+                width="AUTO"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="serviceDs">
+            <column width="250px">
+                <field property="type"
+                       optionsDatasource="allServiceTypesDs"/>
+                <field property="amount"/>
+                <field property="date"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

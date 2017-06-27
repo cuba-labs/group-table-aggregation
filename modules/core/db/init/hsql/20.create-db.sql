@@ -1,0 +1,4 @@
+-- begin SAMPLE_SERVICE
+alter table SAMPLE_SERVICE add constraint FK_SAMPLE_SERVICE_TYPE foreign key (TYPE_ID) references SAMPLE_SERVICE_TYPE(ID)^
+create index IDX_SAMPLE_SERVICE_TYPE on SAMPLE_SERVICE (TYPE_ID)^
+-- end SAMPLE_SERVICE
